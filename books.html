@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AngularJS TIPS</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="./scripts/book.js"></script>
+  </head>
+  <body ng-controller="MyController">
+    <table class="table">
+      <tr>
+        <th>ISBNコード</th>
+        <th>書名</th>
+        <th>価格</th>
+        <th>出版社</th>
+        <th>刊行日</th>
+      </tr>
+      <tr ng-repeat="book in books">
+        <td>{{ book.isbn }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.price }}</td>
+        <td>{{ book.publish }}</td>
+        <td>{{ book.published | date:'yyyy年MM月dd日' }}</td>
+      </tr>
+    </table>
+  </body>
+</html>
