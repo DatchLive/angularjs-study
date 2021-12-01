@@ -1,7 +1,10 @@
-angular.module("myApp", []).controller("MyController", [
-  "$scope",
-  function ($scope) {
-    $scope.books = [
+angular
+  .module("myApp", [])
+  .controller("MyController", function ($scope, BookList) {
+    $scope.books = BookList();
+  })
+  .value("BookList", function () {
+    return [
       {
         isbn: "978-4-7741-7078-7",
         title: "サーブレット＆JSPポケットリファレンス",
@@ -59,5 +62,4 @@ angular.module("myApp", []).controller("MyController", [
         published: new Date(2013, 10, 23),
       },
     ];
-  },
-]);
+  });
